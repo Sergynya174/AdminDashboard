@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Login.scss";
 import { PoupLogin } from "../../components/PoupLogin/PoupLogin";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginAdmin, loginUser } from "../../store/auth";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
@@ -25,14 +26,22 @@ export const Login = () => {
     setPassword(evt.target.value);
   };
 
-  const handleSubmitLoginAdmin = () => {
-    dispatch(loginAdmin(data));
-    navigate("/profile");
+  const handleSubmitLoginAdmin = async () => {
+    await dispatch(loginAdmin(data));
+    if (isAuth === false) {
+      navigate("/");
+    } else {
+      navigate("/profile");
+    }
   };
 
-  const handleSubmitLoginUser = () => {
-    dispatch(loginUser(data));
-    navigate("/profile");
+  const handleSubmitLoginUser = async () => {
+    await dispatch(loginUser(data));
+    if (isAuth === false) {
+      navigate("/");
+    } else {
+      navigate("/profile");
+    }
   };
 
   return (

@@ -48,5 +48,4 @@ const userSlice = createSlice({
   },
 });
 
-export const { preSubmitSingUp } = userSlice.actions;
 export default userSlice.reducer;

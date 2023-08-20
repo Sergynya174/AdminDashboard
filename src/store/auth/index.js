@@ -12,10 +12,8 @@ export const loginUser = createAsyncThunk("loginUser", async (params) => {
 });
 
 const initialState = {
-  user: null,
   isAuthenticated: false,
   isAdmin: false,
-  onSuccess: null,
   errors: null,
   email: null,
   loaders: {
@@ -37,8 +35,8 @@ const authSlice = createSlice({
       localStorage.setItem("refreshToken", refresh);
       state.user = { email };
       state.isAuthenticated = true;
-      state.loaders.common = false;
       state.isAdmin = true;
+      state.loaders.common = false;
     });
     builder.addCase(loginAdmin.rejected, (state) => {
       state.loaders.common = false;
@@ -49,10 +47,10 @@ const authSlice = createSlice({
       state.loaders.common = true;
     });
     builder.addCase(loginUser.fulfilled, (state, { payload }) => {
-      const { email, access, refresh, password } = payload;
+      const { email, access, refresh } = payload;
       localStorage.setItem("accessToken", access);
       localStorage.setItem("refreshToken", refresh);
-      state.user = { email, password };
+      state.user = { email };
       state.isAuthenticated = true;
       state.loaders.common = false;
     });
@@ -63,5 +61,4 @@ const authSlice = createSlice({
   },
 });
 
-export const { preSubmitSingUp } = authSlice.actions;
 export default authSlice.reducer;

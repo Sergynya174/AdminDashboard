@@ -1,8 +1,15 @@
 .sidebar{
-    flex: 1;
     border-right: 0.5px solid rgb(230, 227, 227);
     min-height: 100vh;
     padding: 0;
+    
+    .sidebar_open{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+    }
     
     @media (max-width: 705px) {
         display: none;
@@ -15,7 +22,6 @@
         height: 50px;
         border-bottom: 0.5px solid rgb(231, 228, 228);
         padding-right: 32px;
-        flex: 1;
 
         .sidebar__logo{
             font-size: 32px;

@@ -8,7 +8,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 
 export const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar sidebar_open">
       <div className="sidebar__container-logo">
         <h1 className="sidebar__logo">Coffe</h1>
       </div>
