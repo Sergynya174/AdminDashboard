@@ -8,12 +8,24 @@
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    flex: 5;
+    width: 100%;
+
+    .header__burger{
+        cursor: pointer;
+
+        @media (min-width: 650px) {
+            display: none;
+        }
+    }
 
     .header__container{
         display: flex;
-        flex: 6;
+        width: 100%;
         justify-content: space-between;
+
+        @media (max-width: 650px) {
+            justify-content: end;
+        }
 
         .header_container-search{
             display: flex;
@@ -23,6 +35,10 @@
             max-width: 40%;
             width: 100%;
             justify-content: space-between;
+
+            @media (max-width: 650px) {
+                display: none;
+            }
     
             .header__input{
                 border: none;

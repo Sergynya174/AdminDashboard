@@ -15,7 +15,7 @@ export const Sidebar = () => {
       <div className="sidebar__container">
         <ul className="sidebar__ul">
           <p className="sidebar__title">Главное</p>
-          <Link to="/profile_admin" style={{ textDecoration: "none" }}>
+          <Link to="/profile" style={{ textDecoration: "none" }}>
             <li className="sidebar__li">
               <WorkOutlineIcon className="sidebar__icon" />
               <p className="sidebar__text">Мой профиль</p>
@@ -28,7 +28,7 @@ export const Sidebar = () => {
               <p className="sidebar__text">Пользователи</p>
             </li>
           </Link>
-          <Link to="/payments_admin" style={{ textDecoration: "none" }}>
+          <Link to="/payments" style={{ textDecoration: "none" }}>
             <li className="sidebar__li">
               <CurrencyExchangeIcon className="sidebar__icon" />
               <p className="sidebar__text">Покупки</p>

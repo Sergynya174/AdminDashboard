@@ -1,24 +1,24 @@
 import React from "react";
-import "./PaymentsAdmin.scss";
+import "./Payments.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Header } from "../../components/Header/Header";
 import { Summary } from "../../components/Summary/Summary";
 import { SummaryProduct } from "../../components/SummaryProduct/SummaryProduct";
 import { Chart } from "../../components/Chart/Chart";
-import { UserTable } from "../../components/UserTable/UserTable";
+import { Purchases } from "../../components/Purchases/Purchases";
 
-export const PaymentsAdmin = () => {
+export const Payments = () => {
   return (
-    <div className="payments-admin">
+    <div className="payments">
       <Sidebar />
-      <div className="payments-admin__container">
+      <div className="payments__container">
         <Header />
-        <div className="payments-admin__container-charts">
-          <div className="payments-admin__container-chart">
+        <div className="payments__container-charts">
+          <div className="payments__container-chart">
             <Chart />
-            <UserTable />
+            <Purchases />
           </div>
-          <div className="payments-admin__container-summary">
+          <div className="payments__container-summary">
             <Summary />
             <SummaryProduct />
           </div>

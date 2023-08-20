@@ -1,0 +1,15 @@
+.user-table{
+    max-width: 95%;
+
+    @media (max-width: 1100px) {
+        max-width: 40rem;
+    }
+
+    @media (max-width: 850px) {
+        max-width: 30rem;
+    }
+
+    @media (max-width: 500px) {
+        max-width: 20rem;
+    }
+}

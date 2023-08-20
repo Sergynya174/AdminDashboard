@@ -3,6 +3,10 @@
     border-right: 0.5px solid rgb(230, 227, 227);
     min-height: 100vh;
     padding: 0;
+    
+    @media (max-width: 705px) {
+        display: none;
+    }
 
     .sidebar__container-logo{
         display: flex;

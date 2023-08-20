@@ -1,0 +1,36 @@
+.payments{
+    display: flex;
+
+    .payments__container{
+        width: 100%;
+
+        .payments__container-charts{
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+
+            @media (max-width: 1140px) {
+                flex-direction: column;
+            }
+
+            .payments__container-chart{
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+                flex: 4;
+                margin-right: 20px;
+
+                @media (max-width: 1140px) {
+                    margin-right: 0;
+                }
+            }
+
+            .payments__container-summary{
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+                flex: 2;
+            }
+        }
+    }
+}
