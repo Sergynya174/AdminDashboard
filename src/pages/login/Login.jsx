@@ -26,23 +26,21 @@ export const Login = () => {
     setPassword(evt.target.value);
   };
 
-  const handleSubmitLoginAdmin = async () => {
-    await dispatch(loginAdmin(data));
-    if (isAuth === false) {
-      navigate("/");
-    } else {
-      navigate("/profile");
-    }
+  const handleSubmitLoginAdmin = () => {
+    dispatch(loginAdmin(data));
   };
 
-  const handleSubmitLoginUser = async () => {
-    await dispatch(loginUser(data));
+  const handleSubmitLoginUser = () => {
+    dispatch(loginUser(data));
+  };
+
+  useEffect(() => {
     if (isAuth === false) {
       navigate("/");
     } else {
       navigate("/profile");
     }
-  };
+  }, [isAuth]);
 
   return (
     <div className="login">

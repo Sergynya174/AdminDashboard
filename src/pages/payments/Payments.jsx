@@ -1,28 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Payments.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import { Header } from "../../components/Header/Header";
-import { Summary } from "../../components/Summary/Summary";
-import { SummaryProduct } from "../../components/SummaryProduct/SummaryProduct";
-import { Chart } from "../../components/Chart/Chart";
-import { Purchases } from "../../components/Purchases/Purchases";
+import { Cards } from "../../components/Cards/Cards";
+import Table from "../../components/Table/Table";
+import { ChartTime } from "../../components/Chart/ChartTime";
+import { purchases } from "../../store/purchase";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Payments = () => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.purchase.purchases);
+
+  useEffect(() => {
+    dispatch(purchases());
+  }, []);
+
   return (
     <div className="payments">
       <Sidebar />
       <div className="payments__container">
-        <Header />
-        <div className="payments__container-charts">
-          <div className="payments__container-chart">
-            <Chart />
-            <Purchases />
-          </div>
-          <div className="payments__container-summary">
-            <Summary />
-            <SummaryProduct />
-          </div>
-        </div>
+        <Cards />
+        <Table products={products} />
+      </div>
+      <div className="payments__container-right">
+        <ChartTime />
       </div>
     </div>
   );

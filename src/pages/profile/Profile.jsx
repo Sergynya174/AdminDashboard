@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import "./Profile.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import { Header } from "../../components/Header/Header";
 import { useSelector, useDispatch } from "react-redux";
 import { user } from "../../store/user";
 
 export const Profile = () => {
-  //const user = useSelector((state) => state.user);
+  const item = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export const Profile = () => {
     <div className="profile">
       <Sidebar />
       <div className="profile__container">
-        <Header />
         <div className="profile__container-info">
           <div className="profile__info">
             <button className="profile__button">Редактировать</button>
@@ -29,18 +27,20 @@ export const Profile = () => {
                 alt=""
               />
               <div className="profile__details">
-                <h3 className="profile__name">Сергей Матросов</h3>
+                <h3 className="profile__name">
+                  {`${item?.first_name} ${item?.last_name}`}
+                </h3>
                 <div className="profile__details-item">
                   <span className="profile__subtitle">Ник:</span>
-                  <span className="profile__text">Sergo</span>
+                  <span className="profile__text">{item?.username}</span>
                 </div>
                 <div className="profile__details-item">
                   <span className="profile__subtitle">Почта:</span>
-                  <span className="profile__text">Sergo@mail.ru</span>
+                  <span className="profile__text">{item?.email} </span>
                 </div>
                 <div className="profile__details-item">
                   <span className="profile__subtitle">Роль:</span>
-                  <span className="profile__text">Администратор</span>
+                  <span className="profile__text">{item?.role} </span>
                 </div>
               </div>
             </div>

@@ -4,12 +4,17 @@ const baseUrl = process.env.REACT_APP_BASEURL;
 
 const axiosInstance = axios.create({
   baseURL: baseUrl,
-  headers: {
-    Accept: "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "application/json; charset=UTF-8",
-    Referer: "http://localhost:3000/",
-  },
 });
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("accessToken");
+    if (token !== null) {
+      config.headers.Authorization = `Token ${token}`;
+    }
+    return config;
+  },
+  (err) => Promise.reject(err)
+);
 
 export { axiosInstance };

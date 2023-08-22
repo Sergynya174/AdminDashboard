@@ -1,7 +1,13 @@
 .users{
     display: flex;
+    gap: 2rem;
+    height: 100vh;
 
     .users__container{
-        flex: 5;
+        padding: 2rem 0 0 2rem;
+
+        .users__title{
+            margin: 0 0 2rem;
+        }
     }
 }

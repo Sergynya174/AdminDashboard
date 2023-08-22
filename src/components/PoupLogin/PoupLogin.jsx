@@ -4,8 +4,8 @@ import "./PoupLogin.scss";
 export const PoupLogin = ({
   isOpenPopup,
   handleClick,
-  handleSubmitLoginAdmin,
   handleSubmitLoginUser,
+  handleSubmitLoginAdmin,
 }) => {
   return (
     <div

@@ -51,7 +51,6 @@ const authSlice = createSlice({
       localStorage.setItem("accessToken", access);
       localStorage.setItem("refreshToken", refresh);
       state.user = { email };
-      state.isAuthenticated = true;
       state.loaders.common = false;
     });
     builder.addCase(loginUser.rejected, (state) => {

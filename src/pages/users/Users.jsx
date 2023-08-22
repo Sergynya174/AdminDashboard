@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Users.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import { Header } from "../../components/Header/Header";
 import { UsersTable } from "../../components/UsersTable/UsersTable";
+import { useDispatch, useSelector } from "react-redux";
+import { users } from "../../store/user";
 
 export const Users = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.user.users);
+
+  useEffect(() => {
+    dispatch(users());
+  }, []);
+
   return (
     <div className="users">
       <Sidebar />
       <div className="users__container">
-        <Header />
-        <UsersTable />
+        <h1 className="users__title">Пользователи</h1>
+        <UsersTable data={data} />
       </div>
     </div>
   );
