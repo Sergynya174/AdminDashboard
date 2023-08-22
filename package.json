@@ -1,7 +1,7 @@
 {
   "name": "p4p",
   "version": "0.1.0",
-  "homepage": "https://sergynya174.github.io/AdminDashboard/",
+  "homepage": "https://sergynya174.github.io/AdminDashboard",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
