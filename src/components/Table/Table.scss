@@ -1,23 +1,11 @@
-.MuiTableRow-root > * {
-    padding: 10px;
-}
-  
-.MuiTableRow-root.MuiTableRow-head > * {
-    font-weight: bold !important;
-}
-  
-.table td,
-  th {
-    border: none !important;
-}
-  
-.table:first-child {
-    border-radius: 0.7rem !important;
+.MuiDataGrid-virtualScroller{
+    overflow: hidden !important;
 }
 
 .table{
-    height: 20rem;
-    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
   
 @media (max-width: 1200px) {
