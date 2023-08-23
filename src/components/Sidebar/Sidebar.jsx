@@ -12,8 +12,7 @@ import { useSelector } from "react-redux";
 
 export const Sidebar = () => {
   const link = useLocation();
-  const isAuth = useSelector((state) => state.auth.isAuthenticated);
-
+  const role = useSelector((state) => state.user.user?.role);
   const [expanded, setExpaned] = useState(true);
 
   const sidebarVariants = {
@@ -61,7 +60,7 @@ export const Sidebar = () => {
                 <p className="sidebar__text">Мой профиль</p>
               </li>
             </Link>
-            {isAuth === true ? (
+            {role === "admin" ? (
               <Link
                 to="/users"
                 style={{ textDecoration: "none" }}

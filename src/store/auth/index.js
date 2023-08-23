@@ -14,6 +14,7 @@ export const loginUser = createAsyncThunk("loginUser", async (params) => {
 const initialState = {
   isAuthenticated: false,
   isAdmin: false,
+  isUser: false,
   errors: null,
   email: null,
   loaders: {
@@ -51,6 +52,7 @@ const authSlice = createSlice({
       localStorage.setItem("accessToken", access);
       localStorage.setItem("refreshToken", refresh);
       state.user = { email };
+      state.isUser = true;
       state.loaders.common = false;
     });
     builder.addCase(loginUser.rejected, (state) => {
