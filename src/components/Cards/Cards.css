@@ -1,0 +1,24 @@
+.cards {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+.cards .cards__container {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    flex-direction: column;
+  }
+  .cards__container {
+    height: 9rem;
+  }
+}
+@media (max-width: 768px) {
+  .cards {
+    width: 90%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=Cards.css.map */

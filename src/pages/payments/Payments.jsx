@@ -19,11 +19,11 @@ export const Payments = () => {
     <div className="payments">
       <Sidebar />
       <div className="payments__container">
-        <Cards />
+        <ChartTime />
         <Table products={products} />
       </div>
       <div className="payments__container-right">
-        <ChartTime />
+        <Cards />
       </div>
     </div>
   );

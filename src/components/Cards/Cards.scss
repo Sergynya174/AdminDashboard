@@ -1,6 +1,8 @@
 .cards {
     display: flex;
     gap: 10px;
+    flex-direction: column;
+    margin-right: 1rem;
 
   .cards__container{
     width: 100%;
@@ -19,6 +21,7 @@
 @media (max-width: 768px){
   .cards{
     width: 90%;
+    margin: auto;
   }
 }
 

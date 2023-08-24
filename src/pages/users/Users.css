@@ -1,0 +1,11 @@
+.users {
+  display: flex;
+  gap: 2rem;
+  height: 100vh;
+}
+.users .users__container {
+  padding: 2rem 0 0 2rem;
+}
+.users .users__container .users__title {
+  margin: 0 0 2rem;
+}/*# sourceMappingURL=Users.css.map */

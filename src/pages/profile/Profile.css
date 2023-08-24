@@ -1,0 +1,94 @@
+.profile {
+  display: grid;
+  grid-template-columns: 11rem auto 20rem;
+  gap: 16px;
+  width: 100%;
+  height: 100vh;
+}
+.profile .profile__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+@media (max-width: 1200px) {
+  .profile .profile__container {
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .profile .profile__container {
+    align-items: center;
+  }
+}
+.profile .profile__container-info {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+.profile .profile__container-info .profile__info {
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+.profile .profile__container-info .profile__info .profile__title {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+.profile .profile__container-info .profile__info .profile__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: var(--pink);
+  font-size: 12px;
+  padding: 5px;
+  border: none;
+  border-radius: 0px 0px 0px 5px;
+}
+.profile .profile__container-info .profile__info .profile__item {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 500px) {
+  .profile .profile__container-info .profile__info .profile__item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.profile .profile__container-info .profile__info .profile__item .profile__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .profile__container-info .profile__info .profile__item .profile__details .profile__name {
+  margin: 0 0 10px;
+  color: #555;
+}
+.profile .profile__container-info .profile__info .profile__item .profile__details .profile__details-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.profile .profile__container-info .profile__info .profile__item .profile__details .profile__details-item .profile__subtitle {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.profile .profile__container-info .profile__info .profile__item .profile__details .profile__details-item .profile__text {
+  font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+  .profile {
+    grid-template-columns: 10% 50% auto;
+  }
+}
+@media (max-width: 768px) {
+  .profile {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=Profile.css.map */
