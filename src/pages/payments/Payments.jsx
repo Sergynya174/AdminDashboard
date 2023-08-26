@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Payments.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Cards } from "../../components/Cards/Cards";
+import { user } from "../../store/user";
 import Table from "../../components/Table/Table";
 import { ChartTime } from "../../components/Chart/ChartTime";
 import { purchases } from "../../store/purchase";
@@ -13,6 +14,7 @@ export const Payments = () => {
 
   useEffect(() => {
     dispatch(purchases());
+    dispatch(user(1));
   }, []);
 
   return (

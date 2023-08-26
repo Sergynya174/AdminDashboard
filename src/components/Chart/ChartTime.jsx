@@ -14,31 +14,31 @@ export const ChartTime = () => {
   const data = [
     {
       name: "Ср 09.08",
-      uv: 13000,
+      sum: 13000,
     },
     {
       name: "Чр 10.08",
-      uv: 14000,
+      sum: 14000,
     },
     {
       name: "Пт 11.08",
-      uv: 12000,
+      sum: 12000,
     },
     {
       name: "Сб 12.08",
-      uv: 13600,
+      sum: 13600,
     },
     {
       name: "Вс 13.08",
-      uv: 12700,
+      sum: 12700,
     },
     {
       name: "Пн 14.08",
-      uv: 13200,
+      sum: 13200,
     },
     {
       name: "Вт 15.08",
-      uv: 7600,
+      sum: 7600,
     },
   ];
 
@@ -60,7 +60,7 @@ export const ChartTime = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="uv" />
+          <Area type="monotone" dataKey="sum" />
         </AreaChart>
       </ResponsiveContainer>
     </div>

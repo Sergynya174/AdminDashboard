@@ -2,20 +2,21 @@ import { useState } from "react";
 import "./Card.scss";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { motion, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import CloseIcon from "@mui/icons-material/Close";
 import Chart from "react-apexcharts";
 
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
+
   return (
-    <LayoutGroup>
+    <AnimatePresence>
       {expanded ? (
         <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
-    </LayoutGroup>
+    </AnimatePresence>
   );
 };
 
@@ -27,20 +28,22 @@ function CompactCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
+      layoutId={param.id}
       onClick={setExpanded}
     >
-      <div className="card__radial-bar">
+      <motion.div className="card__radial-bar">
         <CircularProgressbar
           value={param.barValue}
           text={`${param.barValue}%`}
         />
-        <span className="card__title-compact">{param.title}</span>
-      </div>
-      <div className="card__detail">
-        <span className="card__span-compact">&#8381;{param.value}</span>
-        <span className="card__span-compact">За 24 часа</span>
-      </div>
+        <motion.span className="card__title-compact">{param.title}</motion.span>
+      </motion.div>
+      <motion.div className="card__detail">
+        <motion.span className="card__span-compact">
+          &#8381;{param.value}
+        </motion.span>
+        <motion.span className="card__span-compact">За 24 часа</motion.span>
+      </motion.div>
     </motion.div>
   );
 }
@@ -104,16 +107,18 @@ function ExpandedCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
+      layoutId={param.id}
     >
-      <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
+      <motion.div
+        style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}
+      >
         <CloseIcon onClick={setExpanded} />
-      </div>
-      <span className="card__title-expanded">{param.title}</span>
-      <div className="card__chart-container-expanded">
+      </motion.div>
+      <motion.span className="card__title-expanded">{param.title}</motion.span>
+      <motion.div className="card__chart-container-expanded">
         <Chart options={data.options} series={param.series} type="area" />
-      </div>
-      <span className="card__span-expanded">За 24 часа</span>
+      </motion.div>
+      <motion.span className="card__span-expanded">За 24 часа</motion.span>
     </motion.div>
   );
 }

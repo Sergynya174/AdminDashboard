@@ -10,11 +10,11 @@ export const Cards = () => {
         return (
           <div className="cards__container" key={id}>
             <Card
+              id={id}
               title={card.title}
               color={card.color}
               barValue={card.barValue}
               value={card.value}
-              png={card.png}
               series={card.series}
             />
           </div>

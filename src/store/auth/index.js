@@ -25,6 +25,11 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  reducers: {
+    deleteAuthenticated: (state) => {
+      state.isAuthenticated = false;
+    },
+  },
   extraReducers: (builder) => {
     //loginAdmin
     builder.addCase(loginAdmin.pending, (state) => {
@@ -62,4 +67,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { deleteAuthenticated } = authSlice.actions;
 export default authSlice.reducer;

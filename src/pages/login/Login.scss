@@ -18,7 +18,7 @@
 		h1{
 			font-size: 40px;
 			font-weight: 200;
-			color: #6439ff;
+			color: var(--pink);;
 		}
 	}
 	
@@ -59,13 +59,13 @@
 			cursor: pointer;
 			font-size: 18px;
 			transition-duration: 0.25s;
-			background-color: #6439ff;
+			background-color: var(--pink);;
 			color: white;
 			margin-top: 20px;
 			
 			&:hover{
 				background-color: rgb(245, 247, 249);
-				color: #6439ff;
+				color: var(--pink);;
 			}
 		}
 	}

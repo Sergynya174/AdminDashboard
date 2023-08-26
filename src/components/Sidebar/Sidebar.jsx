@@ -9,10 +9,11 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useDispatch, useSelector } from "react-redux";
-import { exit } from "../../store/auth";
+import { deleteAuthenticated } from "../../store/auth";
 
 export const Sidebar = () => {
   const link = useLocation();
+  const dispatch = useDispatch();
   const role = useSelector((state) => state.user.user?.role);
   const [expanded, setExpaned] = useState(true);
 
@@ -23,6 +24,10 @@ export const Sidebar = () => {
     false: {
       left: "-60%",
     },
+  };
+
+  const exit = () => {
+    dispatch(deleteAuthenticated());
   };
 
   return (
@@ -94,6 +99,7 @@ export const Sidebar = () => {
               </li>
             </Link>
             <Link
+              onClick={exit}
               to="/"
               style={{ textDecoration: "none" }}
               className={

@@ -3,7 +3,7 @@ import "./Users.scss";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { UsersTable } from "../../components/UsersTable/UsersTable";
 import { useDispatch, useSelector } from "react-redux";
-import { users } from "../../store/user";
+import { users, user } from "../../store/user";
 
 export const Users = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ export const Users = () => {
 
   useEffect(() => {
     dispatch(users());
+    dispatch(user(1));
   }, []);
 
   return (
